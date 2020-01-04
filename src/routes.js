@@ -6,8 +6,11 @@ import {
     browserHistory
 } from 'react-router';
 
-import Home from './containers/Home/Home';
-import Main from './containers/Mine/MainMain';
+import Header from './components/header/Header';
+import Footer from './components/footer/Footer'
+
+import Home from './containers/home/Home';
+import Mine from './containers/mine/MineMain';
 
 /**
  * 页面级父组件
@@ -15,8 +18,10 @@ import Main from './containers/Mine/MainMain';
 class App extends Component {
     render() {
         return (
-            <div>
+            <div id="J-website">
+                <Header/>
                 {this.props.children}
+                <Footer/>
             </div>
         )
     }
@@ -29,8 +34,9 @@ const routes = () => {
     return (
         <Router history={browserHistory}>
             <Route path="/" component={App}>
-                <IndexRoute component={Home} />
-                <Route path="/mine" component={Main}/>
+                <IndexRoute component={Mine} />
+                <Route path="/home" component={Home}/>
+                <Route path="/mine" component={Mine}/>
             </Route>
         </Router>
     )
