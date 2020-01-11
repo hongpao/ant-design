@@ -1,6 +1,9 @@
 // import React, {Component} from 'react';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
+import reducer from './store/reducer'
 // import {
 //     Router,
 //     Route,
@@ -8,6 +11,7 @@ import ReactDOM from 'react-dom';
 //     browserHistory
 // } from 'react-router'
 import Routes from './routes'
+import 'antd/dist/antd.css';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 
@@ -24,7 +28,15 @@ import * as serviceWorker from './serviceWorker';
 //     }
 // }
 
-ReactDOM.render(<Routes/>, document.getElementById('root'));
+//创建store
+const store = createStore(reducer)
+
+ReactDOM.render(
+    <Provider store={store}>
+        <Routes/>
+    </Provider>,
+    document.getElementById('root')
+);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
