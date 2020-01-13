@@ -21,7 +21,8 @@ const Part = (props) => {
     let [seconds, setSecond] = useCountDown(0)
 
     const lightSwitch = () => setOn(on => !on);
-
+console.log('hujunhao test')
+console.log(props)
     return (
         <div>
             { on ? 'hahah' : 'hehehe' }

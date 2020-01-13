@@ -6,9 +6,13 @@
 
 import Types from '../utils/types'
 
-const data = 100
+const stores = {
+    main: {
+        total: 100
+    }
+}
 
-const reducer = (state = data, action) => {
+const reducer = (state = stores, action) => {
     switch (action.type) {
         case Types.TEST:
             return state += 100;

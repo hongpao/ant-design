@@ -16,6 +16,7 @@ class MineMain extends Component {
         // Store.subscribe(() =>
         //     console.log(Store.getState())
         // );
+        console.log('hongpao test')
         console.log(this.props)
     }
 
@@ -32,7 +33,7 @@ class MineMain extends Component {
                     <div className="content">
                         <Icon type="smile" theme="outlined"/>
                         hongpao test ！
-                        <Part actions={this.props}/>
+                        <Part props={this.props}/>
                     </div>
                 </main>
             // </Provider>
@@ -43,7 +44,7 @@ class MineMain extends Component {
 //需要渲染什么数据
 function mapStateToProps(state) {
     return {
-        tiger: state
+        state
     }
 }
 //需要触发什么行为
