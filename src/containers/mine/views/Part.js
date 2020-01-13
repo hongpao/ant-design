@@ -5,7 +5,6 @@ const useCountDown = (num) => {
     const [seconds, setSecond] = useState(num)
     
     useEffect(() => {
-        console.log('测试文案输出')
         setTimeout(() => {
             if (seconds > 0) {
                 setSecond(c => c - 1);
@@ -21,10 +20,12 @@ const Part = (props) => {
     let [seconds, setSecond] = useCountDown(0)
 
     const lightSwitch = () => setOn(on => !on);
-console.log('hujunhao test')
-console.log(props)
+    
+    console.log(props)
+
     return (
         <div>
+            <div>好久好久：{props.main.total}</div>
             { on ? 'hahah' : 'hehehe' }
             <div>
                 <Button type="primary" onClick={lightSwitch}> click me </Button>

@@ -16,8 +16,6 @@ class MineMain extends Component {
         // Store.subscribe(() =>
         //     console.log(Store.getState())
         // );
-        console.log('hongpao test')
-        console.log(this.props)
     }
 
     //操作
@@ -33,7 +31,7 @@ class MineMain extends Component {
                     <div className="content">
                         <Icon type="smile" theme="outlined"/>
                         hongpao test ！
-                        <Part props={this.props}/>
+                        <Part main={this.props.main}/>
                     </div>
                 </main>
             // </Provider>
@@ -44,7 +42,7 @@ class MineMain extends Component {
 //需要渲染什么数据
 function mapStateToProps(state) {
     return {
-        state
+        main: state.main
     }
 }
 //需要触发什么行为
@@ -55,4 +53,4 @@ function mapDispatchToProps(dispatch) {
     }
 }
 
-export default MineMain = connect(mapStateToProps, mapDispatchToProps)(MineMain)
+export default connect(mapStateToProps, mapDispatchToProps)(MineMain)
