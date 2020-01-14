@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-// import Store from '../../../store/reducer'
 import Actions from '../actions'
 import { Icon } from 'antd'
 import '../mine.css';
@@ -12,10 +11,6 @@ class MineMain extends Component {
     //     this.store = createStore(reducer)
     // }
     componentDidMount(){
-        //订阅事件
-        // Store.subscribe(() =>
-        //     console.log(Store.getState())
-        // );
     }
 
     //操作
@@ -24,17 +19,14 @@ class MineMain extends Component {
     }
 
     render(){
-        // console.log(Store.getState())
         return (
-            // <Provider>
-                <main>
-                    <div className="content">
-                        <Icon type="smile" theme="outlined"/>
-                        hongpao test ！
-                        <Part main={this.props.main}/>
-                    </div>
-                </main>
-            // </Provider>
+            <main>
+                <div className="content">
+                    <Icon type="smile" theme="outlined"/>
+                    hongpao test ！
+                    <Part store={this.props}/>
+                </div>
+            </main>
         )
     }
 }
@@ -48,6 +40,7 @@ function mapStateToProps(state) {
 //需要触发什么行为
 function mapDispatchToProps(dispatch) {
     return {
+        haha: () => Actions.haha(dispatch),
         PayIncrease: () => dispatch({ type: '涨工资' }),
         PayDecrease: () => dispatch({ type: '扣工资' })
     }

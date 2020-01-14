@@ -1,4 +1,7 @@
-// import React, {Component} from 'react';
+/**
+ * Created by hongpao 2020.1.3
+ */
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore } from 'redux'

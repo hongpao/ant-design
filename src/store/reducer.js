@@ -20,7 +20,7 @@ function updateObject(oldObject, newValues) {
 const reducer = (state = stores, action) => {
     switch (action.type) {
         case Types.TEST:
-            return state += 100;
+            return state;
         case '扣工资':
             return state -= 100;
         default:
