@@ -20,13 +20,12 @@ const Part = (props) => {
     let [seconds, setSecond] = useCountDown(0)
 
     const lightSwitch = () => setOn(on => !on);
-    
-    console.log('额')
-    console.log(props)
 
+    // console.log('额')
+    // console.log(props)
     return (
         <div>
-            {/* <div>好久好久：{props.main}</div> */}
+            <div>好久好久：{props.store.main}</div>
             { on ? 'hahah' : 'hehehe' }
             <div>
                 <Button type="primary" onClick={lightSwitch}> click me </Button>

@@ -34,6 +34,13 @@ import * as serviceWorker from './serviceWorker';
 //创建store
 const store = createStore(reducer)
 
+// 打印初始状态
+// console.log(store.getState())
+
+store.subscribe(() =>
+    console.log(store.getState())
+)
+
 ReactDOM.render(
     <Provider store={store}>
         <Routes/>
