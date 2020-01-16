@@ -4,9 +4,10 @@
  * @param {*} action 
  */
 
+ import { createStore } from 'redux'
 import Types from '../utils/types'
 
-const stores = {
+const states = {
     main: 100
 }
 
@@ -15,7 +16,7 @@ const stores = {
 //     return Object.assign({}, oldObject, newValues)
 // }
 
-const reducer = (state = stores, action) => {
+const reducer = (state = states, action) => {
     switch (action.type) {
         case Types.TEST:
             state.main += action.df || 0
@@ -27,4 +28,7 @@ const reducer = (state = stores, action) => {
     }
 }
 
-export default reducer
+//创建store
+const store = createStore(reducer)
+
+export default store

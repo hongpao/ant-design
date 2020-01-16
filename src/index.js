@@ -4,7 +4,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore } from 'redux'
+// import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import reducer from './store/reducer'
 // import {
@@ -31,18 +31,18 @@ import * as serviceWorker from './serviceWorker';
 //     }
 // }
 
-//创建store
-const store = createStore(reducer)
+// //创建store
+// const store = createStore(reducer)
 
 // 打印初始状态
 // console.log(store.getState())
 
-store.subscribe(() =>
-    console.log(store.getState())
-)
+// store.subscribe(() =>
+//     console.log(store.getState())
+// )
 
 ReactDOM.render(
-    <Provider store={store}>
+    <Provider store={reducer}>
         <Routes/>
     </Provider>,
     document.getElementById('root')

@@ -21,8 +21,6 @@ const Part = (props) => {
 
     const lightSwitch = () => setOn(on => !on);
 
-    // console.log('额')
-    // console.log(props)
     return (
         <div>
             <div>好久好久：{props.store.main}</div>
